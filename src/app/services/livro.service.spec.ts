@@ -1,6 +1,6 @@
 import { GeneroLiterario, Livro } from '../componentes/livro/livro';
 import { livros } from '../mock-livros';
-import { LivroService } from './livro.service';
+import { ErroGeneroLiterario, LivroService } from './livro.service';
 
 //contexto do nosso teste
 describe('LivroService', () => {
@@ -54,5 +54,20 @@ describe('LivroService', () => {
     ];
 
     expect(generosEsperados).toEqual(service.generos);
+  });
+
+  it('deveria lancar um erro ao tentar cadastrar livro com genero desconhecido', () => {
+    const novoLivro: Livro = {
+      titulo: 'Novo Livro',
+      autoria: 'Autor Desconhecido',
+      imagem: 'http://example.com/cover.jpg',
+      genero: { id: 'nao-existe', value: 'Não Existe' },
+      dataLeitura: '2024-04-19',
+      classificacao: 5,
+    };
+
+    expect(() => service.adicionarLivro(novoLivro)).toThrow(
+      ErroGeneroLiterario
+    );
   });
 });
