@@ -6,20 +6,15 @@ import { LivroService } from './livro.service';
 describe('LivroService', () => {
   //Arrange
   let service: LivroService;
+  service = new LivroService();
 
   //testar se o serviço foi criaido
   it('deveria ser criado', () => {
-    //Act
-    //instanciamos o livro service
-    service = new LivroService();
-
     //Assert
     expect(service).toBeTruthy();
   });
 
   it('deveria adicionar um novo livro', () => {
-    service = new LivroService();
-
     const novoLivro: Livro = {
       titulo: 'Novo Livro',
       autoria: 'Autor Desconhecido',
@@ -36,8 +31,6 @@ describe('LivroService', () => {
   });
 
   it('deveria recuperar corretamente os livros por gênero', () => {
-    service = new LivroService();
-
     const livrosPorGenero = service.obterLivrosPorGenero('romance');
 
     //Faz um filtro no mock de livros para trazer somente os de romance
