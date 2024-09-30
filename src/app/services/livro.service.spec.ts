@@ -6,7 +6,10 @@ import { LivroService } from './livro.service';
 describe('LivroService', () => {
   //Arrange
   let service: LivroService;
-  service = new LivroService();
+
+  beforeEach(() => {
+    service = new LivroService();
+  });
 
   //testar se o serviço foi criaido
   it('deveria ser criado', () => {
