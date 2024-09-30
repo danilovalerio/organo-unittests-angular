@@ -1,4 +1,5 @@
 import { Livro } from '../componentes/livro/livro';
+import { livros } from '../mock-livros';
 import { LivroService } from './livro.service';
 
 //contexto do nosso teste
@@ -32,5 +33,18 @@ describe('LivroService', () => {
 
     const livrosPorGenero = service.obterLivrosPorGenero('romance');
     expect(livrosPorGenero).toContain(novoLivro);
+  });
+
+  it('deveria recuperar corretamente os livros por gênero', () => {
+    service = new LivroService();
+
+    const livrosPorGenero = service.obterLivrosPorGenero('romance');
+
+    //Faz um filtro no mock de livros para trazer somente os de romance
+    const livrosEsperados = livros.filter(
+      (livro) => livro.genero.id === 'romance'
+    );
+
+    expect(livrosPorGenero).toEqual(livrosEsperados);
   });
 });
