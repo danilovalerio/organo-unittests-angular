@@ -27,7 +27,7 @@ describe('CabecalhoComponent', () => {
 
   it('deveria renderizar o conteudo baseado nas propriedades src e alt', () => {
     component.src = 'http://example.com/test-imagem.jpg';
-    component.alt = '';
+    component.alt = 'Imagem de teste';
 
     expect(component).toMatchSnapshot();
   });
