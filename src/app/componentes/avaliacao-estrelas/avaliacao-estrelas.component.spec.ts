@@ -37,4 +37,23 @@ describe('AvaliacaoEstrelasComponent', () => {
 
     expect(component.classificacao).toBe(classificacao);
   });
+
+  //Método classificar invoca mais 2 métodos, vamos verificar se realmente isso acontece
+  it('deveria chamar o onChange quando o método classificar for chamado', () => {
+    const nomeDoMetodo = 'onChange';
+    const onChangeSpy = jest.spyOn(component, nomeDoMetodo);
+    const classificacao = 4;
+
+    component.classificar(classificacao);
+    expect(onChangeSpy).toHaveBeenCalled();
+  });
+
+  it('deveria chamar o onTouched quando o método classificar for chamado', () => {
+    const nomeDoMetodo = 'onTouched';
+    const onTouchedSpy = jest.spyOn(component, nomeDoMetodo);
+    const classificacao = 4;
+
+    component.classificar(classificacao);
+    expect(onTouchedSpy).toHaveBeenCalled();
+  });
 });
