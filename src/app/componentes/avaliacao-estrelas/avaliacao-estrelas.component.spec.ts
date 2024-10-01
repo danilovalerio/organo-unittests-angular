@@ -59,6 +59,7 @@ describe('AvaliacaoEstrelasComponent', () => {
 
   it('não deveria atualizar a classificação quando a propriedade readonly for true', () => {
     const nomeDoMetodo = 'onChange';
+    component.readOnly = true;
     const onChangeSpy = jest.spyOn(component, nomeDoMetodo);
     const classificacao = 5;
 
