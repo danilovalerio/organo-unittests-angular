@@ -23,6 +23,7 @@ describe('AvaliacaoEstrelasComponent', () => {
     component = fixture.componentInstance;
     //por padrao no card é somente leitura, porém no form vamos interagir com esta propriedade
     component.readOnly = false;
+    //fixture.detectChanges(); //podemos adicionar ele aqui também, assim valida para todos
   });
 
   it('deveria ser criado', () => {
