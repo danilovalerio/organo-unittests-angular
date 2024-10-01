@@ -31,7 +31,7 @@ export class AvaliacaoEstrelasComponent implements ControlValueAccessor {
   }
 
   private isClassificationValid(classificacao: number): boolean {
-    return classificacao >= 1 || classificacao <= 5;
+    return classificacao >= 1 && classificacao <= 5;
   }
 
   registerOnChange(fn: any): void {
