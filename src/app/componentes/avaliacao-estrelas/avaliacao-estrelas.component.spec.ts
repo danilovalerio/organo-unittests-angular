@@ -76,4 +76,18 @@ describe('AvaliacaoEstrelasComponent', () => {
       expect(component.classificacao).toBe(1);
     });
   });
+
+  //classe filled no CSS
+  it('deveria atualizar o DOM quando a classificação muda', () => {
+    const classificacao = 3;
+    //aqui muda o estado interno do component não o dom
+    component.classificar(classificacao);
+
+    //para verificar atualizações no dom
+    fixture.detectChanges();
+
+    //ira validar se ao passar uma classificacao de estrelas ira conter essa classe que pinta a estrela de amarelo
+    const estrelaPreenchida = fixture.nativeElement.querySelector('.filled');
+    expect(estrelaPreenchida).toBeTruthy();
+  });
 });
