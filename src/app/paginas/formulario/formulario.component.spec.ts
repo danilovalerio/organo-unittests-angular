@@ -3,6 +3,8 @@ import { FormularioComponent } from './formulario.component';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { LivroService } from '../../services/livro.service';
+import { routes } from '../../app.routes';
+import { Router } from '@angular/router';
 
 describe('FormularioComponent', () => {
   let component: FormularioComponent;
@@ -43,6 +45,8 @@ describe('FormularioComponent', () => {
     };
 
     const adicionarLivroSpy = jest.spyOn(service, 'adicionarLivro');
+    const routerSpy = jest.spyOn(component['router'], 'navigate');
+
     component.formulario.setValue(novoLivro);
     component.adicionarLivro();
 
@@ -60,5 +64,8 @@ describe('FormularioComponent', () => {
       dataLeitura: null,
       classificacao: null,
     });
+
+    //verificar se o router seguiu para rota esperada
+    expect(routerSpy).toHaveBeenCalledWith(['lista-livros']);
   });
 });
