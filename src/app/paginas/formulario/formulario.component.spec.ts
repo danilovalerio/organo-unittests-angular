@@ -32,5 +32,14 @@ describe('FormularioComponent', () => {
     });
   });
 
-  it('deveria adicionar um novo livro ', () => {});
+  it('deveria adicionar um novo livro ', () => {
+    const novoLivro = {
+      titulo: 'Novo Livro',
+      autoria: 'Autoria Desconhecida',
+      imagem: 'http://example.com/cover.jpg',
+      genero: 'romance',
+      dataLeitura: '2024-04-19',
+      classificacao: 5,
+    };
+  });
 });
