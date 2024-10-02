@@ -41,5 +41,7 @@ describe('FormularioComponent', () => {
       dataLeitura: '2024-04-19',
       classificacao: 5,
     };
+
+    const adicionarLivroSpy = jest.spyOn(service, 'adicionarLivro');
   });
 });
