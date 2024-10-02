@@ -42,3 +42,7 @@ Então, acesse [http://localhost:4200/](url) no seu navegador.
 ## Compile Components
 
 - Se você estiver usando ambientes de desenvolvimento é usar, caso seja só via CLI não há necessidade, segue docummentação [https://angular.dev/guide/testing/components-scenarios#calling-compilecomponents](Documentação)
+
+## Cobertura de Tests
+
+ng test --coverage
