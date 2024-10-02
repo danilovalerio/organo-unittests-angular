@@ -18,6 +18,7 @@ describe('FormularioComponent', () => {
     service = TestBed.inject(LivroService);
     fixture = TestBed.createComponent(FormularioComponent);
     component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('deveria inicializar o form com os campos vazios', () => {
