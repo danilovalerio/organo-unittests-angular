@@ -50,5 +50,15 @@ describe('FormularioComponent', () => {
       ...novoLivro,
       genero: component.generos.find((g) => g.id === novoLivro.genero),
     });
+
+    //após adicionar de um form reset para limpar o form
+    expect(component.formulario.value).toEqual({
+      titulo: null,
+      autoria: null,
+      imagem: null,
+      genero: null,
+      dataLeitura: null,
+      classificacao: null,
+    });
   });
 });
