@@ -46,3 +46,16 @@ Então, acesse [http://localhost:4200/](url) no seu navegador.
 ## Cobertura de Tests
 
 ng test --coverage
+
+## Links Úteis
+
+- [https://angular.dev/](Documentação oficial do Angular)
+- [https://jestjs.io/pt-BR/](Documentação oficial do Jest)
+- [https://blog.angular.io/moving-angular-cli-to-jest-and-web-test-runner-ef85ef69ceca](Moving Angular CLI to Jest and Web Test Runner)
+
+```
+  Este artigo no blog oficial do Angular descreve as vantagens de mover o Angular CLI para utilizar o Jest e o Web Test Runner. Ele explica os benefícios de desempenho, a simplificação da configuração de testes e como essa mudança pode melhorar a experiência de desenvolvimento.
+```
+
+- [https://www.alura.com.br/artigos/por-que-e-o-que-e-possivel-testar](Por que e o que é possível testar)
+- [https://www.alura.com.br/artigos/dicas-desenvolver-testes-unitarios-integracao-front-end](Dicas de Testes Unitários e de Integração no Front-end)
