@@ -43,5 +43,7 @@ describe('FormularioComponent', () => {
     };
 
     const adicionarLivroSpy = jest.spyOn(service, 'adicionarLivro');
+    component.formulario.setValue(novoLivro);
+    component.adicionarLivro();
   });
 });
