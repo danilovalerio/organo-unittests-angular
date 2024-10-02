@@ -19,4 +19,15 @@ describe('FormularioComponent', () => {
     fixture = TestBed.createComponent(FormularioComponent);
     component = fixture.componentInstance;
   });
+
+  it('deveria inicializar o form com os campos vazios', () => {
+    expect(component.formulario.value).toEqual({
+      titulo: '',
+      autoria: '',
+      imagem: '',
+      genero: '',
+      dataLeitura: '',
+      classificacao: null,
+    });
+  });
 });
