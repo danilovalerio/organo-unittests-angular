@@ -45,5 +45,10 @@ describe('FormularioComponent', () => {
     const adicionarLivroSpy = jest.spyOn(service, 'adicionarLivro');
     component.formulario.setValue(novoLivro);
     component.adicionarLivro();
+
+    expect(adicionarLivroSpy).toHaveBeenCalledWith({
+      ...novoLivro,
+      genero: component.generos.find((g) => g.id === novoLivro.genero),
+    });
   });
 });
